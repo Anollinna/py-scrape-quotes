@@ -52,7 +52,7 @@ def save_to_csv(quotes: list[Quote], file_path: str) -> None:
         writer = csv.writer(f)
         writer.writerow(["text", "author", "tags"])
         for quote in quotes:
-            writer.writerow([quote.text, quote.author, quote.tags])
+            writer.writerow([quote.text, quote.author, ", ".join(quote.tags)])
 
 
 def main(output_csv_path: str) -> None:
